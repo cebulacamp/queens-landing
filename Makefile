@@ -1,8 +1,13 @@
 .DEFAULT_GOAL := help
 
+ENTRYPOINT := src/index.pug
+
 # Porcelain
 # ###############
 .PHONY: env-up env-down env-recreate ci build lint test container
+
+serve: ## run bleble
+	npx parcel $(ENTRYPOINT)
 
 ci: setup lint test build container ## run all tests and build all artifacts
 	@echo "Not implemented"; false
@@ -16,8 +21,7 @@ env-down: ## tear down dev environment
 env-recreate: env-down env-up ## deconstruct current env and create another one
 
 build: setup ## create artifact
-	mkdir -p dist
-	cp index.html dist
+	npx parcel build $(ENTRYPOINT)
 
 lint: ## run static analysis
 	@echo "Not implemented"; false

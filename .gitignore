@@ -1,2 +1,11 @@
 # build artifacts
 dist
+
+# libraries
+node_modules
+
+# random junk
+yarn-error.log
+
+# caches
+.cache
