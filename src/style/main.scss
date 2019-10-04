@@ -5,10 +5,12 @@ $color4: rgba(61, 140, 208, 1);
 $color5: rgba(173, 35, 101, 1);
 
 .hero {
-    height: 115vh;
+    height: 50vh;
+    //height: 115vh;
     color: $color2;
     background-color: $color1;
     text-align: center;
+    padding: 5em;
 }
 
 * {
@@ -24,6 +26,38 @@ body {
     margin: 0;
 }
 
+// TODO: first section color1, other color2, etc. - with some spacing and shit
+// TODO: Maybe some fun with how text is laid
+
+section {
+    padding: 5em;
+}
+
+section h2 {
+    display: inline-block;
+    margin: 1em 1em 1em 0em;
+}
+
+section:nth-child(even) {
+    color: $color2;
+    background-color: $color1;
+    padding: 5em;
+
+    h2 {
+        background-color: $color5;
+    }
+}
+section:nth-child(odd) {
+    color: $color1;
+    background-color: $color2;
+    padding: 5em;
+
+    h2 {
+        background-color: $color3;
+    }
+}
+
+// testing area
 .acc0 {
     color: $color4;
 }
