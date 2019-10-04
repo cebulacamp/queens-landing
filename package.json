@@ -1,8 +1,6 @@
 {
   "name": "queens-landing",
   "repository": "git@github.com:cebulacamp/queens-landing.git",
-  "author": "Olgierd \"Allgreed\" Kasprowicz <olixem@gmail.com>",
-  "license": "MIT",
   "private": true,
   "devDependencies": {
     "autoprefixer": "^9.6.1",

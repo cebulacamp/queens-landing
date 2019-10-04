@@ -38,10 +38,14 @@ section h2 {
     margin: 1em 1em 1em 0em;
 }
 
+.hero {
+    border-left: 2em solid $color3;
+}
+
 section:nth-child(even) {
     color: $color2;
     background-color: $color1;
-    padding: 5em;
+    border-right: 1em solid $color4;
 
     h2 {
         background-color: $color5;
@@ -50,7 +54,7 @@ section:nth-child(even) {
 section:nth-child(odd) {
     color: $color1;
     background-color: $color2;
-    padding: 5em;
+    border-left: 1em solid $color5;
 
     h2 {
         background-color: $color3;
