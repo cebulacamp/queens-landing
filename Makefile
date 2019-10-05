@@ -9,7 +9,7 @@ ENTRYPOINT := src/index.pug
 serve: ## run bleble
 	npx parcel $(ENTRYPOINT)
 
-ci: setup lint test build container ## run all tests and build all artifacts
+ci: setup lint test build push-container-image ## run all tests and build all artifacts
 	@echo "Not implemented"; false
 
 env-up: ## set up dev environment
@@ -35,7 +35,11 @@ container: build ## create container
 
 # Plumbing
 # ###############
-.PHONY: setup
+.PHONY: setup push-container-image
+
+push-container-image: container
+	docker tag queens-landing allgreed/queens-landing:preview$(VERSION)
+	docker push allgreed/queens-landing:preview$(VERSION)
 
 setup:
 
