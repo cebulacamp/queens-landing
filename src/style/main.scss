@@ -29,23 +29,20 @@ body {
 // TODO: first section color1, other color2, etc. - with some spacing and shit
 // TODO: Maybe some fun with how text is laid
 
-section {
-    padding: 5em;
-}
-
 section h2 {
     display: inline-block;
     margin: 1em 1em 1em 0em;
 }
 
-.hero {
-    border-left: 2em solid $color3;
+section.dupa {
+    box-shadow: none !important;
 }
 
 section:nth-child(even) {
     color: $color2;
     background-color: $color1;
-    border-right: 1em solid $color4;
+    box-shadow: 0em -1em 3em 2.5em $color1;
+    padding: 3em 3em;
 
     h2 {
         background-color: $color5;
@@ -55,6 +52,8 @@ section:nth-child(odd) {
     color: $color1;
     background-color: $color2;
     border-left: 1em solid $color5;
+    box-shadow: inset 0px 3em 1em -2em $color1;
+    padding: 7em 7em;
 
     h2 {
         background-color: $color3;
