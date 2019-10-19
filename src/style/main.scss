@@ -1,4 +1,5 @@
-$color1: rgba(31, 42, 38, 1);
+//$color1: rgba(31, 42, 38, 1);
+$color1: rgba(0, 0, 0, 1);
 $color2: rgba(223, 219, 244, 1);
 $color3: rgba(232, 227, 33, 1);
 $color4: rgba(61, 140, 208, 1);
@@ -24,40 +25,78 @@ body {
     width: 100%;
     height: 100%;
     margin: 0;
+    background-color: $color1;
 }
 
-// TODO: first section color1, other color2, etc. - with some spacing and shit
+main {
+    width: 60%;
+    margin: 0 auto;
+}
+
 // TODO: Maybe some fun with how text is laid
 
-section h2 {
-    display: inline-block;
-    margin: 1em 1em 1em 0em;
+section.dupa {
+    border: none !important;
 }
 
-section.dupa {
-    box-shadow: none !important;
+section {
+    color: $color2;
+    //background-color: transparent;
+    // TODO: have some fun with transparency :D
+    background-color: $color1;
+    padding: 3em;
+    padding-bottom: 5em;
+
+    p {
+        margin: 1em;
+    }
+
+    h2 {
+        display: inline-block;
+        margin: 1em 1em 1em 0em;
+        padding: .5em;
+    }
+
+    // TODO: generate this shit
+    &:nth-child(2) {
+        margin: 0em 1em 0em -2em;
+    }
+
+    &:nth-child(3) {
+        margin: -3em -1em 3em 1em;
+    }
+
+    &:nth-child(4) {
+        margin: -6em -3em 6em 4em;
+    }
+
+    &:nth-child(5) {
+        margin: -9em -5em 9em 7em;
+    }
+
+    &:nth-child(6) {
+        margin: -12em -7em 12em 10em;
+    }
+
+    &:nth-child(7) {
+        margin: -15em -9em 15em 13em;
+    }
 }
 
 section:nth-child(even) {
-    color: $color2;
-    background-color: $color1;
-    box-shadow: 0em -1em 3em 2.5em $color1;
-    padding: 3em 3em;
-
     h2 {
         background-color: $color5;
     }
-}
-section:nth-child(odd) {
-    color: $color1;
-    background-color: $color2;
-    border-left: 1em solid $color5;
-    box-shadow: inset 0px 3em 1em -2em $color1;
-    padding: 7em 7em;
 
+    border: 8px solid $color5;
+}
+
+section:nth-child(odd) {
     h2 {
-        background-color: $color3;
+        background-color: $color4;
     }
+
+    border: 8px solid $color4;
 }
 
 // testing area
