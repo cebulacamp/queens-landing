@@ -34,7 +34,7 @@ main {
 
 // TODO: Maybe some fun with how text is laid
 
-section.dupa {
+section.starter {
     border: none !important;
 }
 
@@ -91,12 +91,29 @@ section:nth-child(even) {
         background-color: $color5;
     }
 
+
+    a {
+        color: $color5;
+
+        &:hover {
+            color: $color4;
+        }
+    }
+
     border: 8px solid $color5;
 }
 
 section:nth-child(odd) {
     h2 {
         background-color: $color4;
+    }
+
+    a {
+        color: $color4;
+
+        &:hover {
+            color: $color5;
+        }
     }
 
     border: 8px solid $color4;

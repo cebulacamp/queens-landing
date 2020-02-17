@@ -20,7 +20,7 @@ env-down: ## tear down dev environment
 
 env-recreate: env-down env-up ## deconstruct current env and create another one
 
-build: setup ## create artifact
+build: setup clean ## create artifact
 	npx parcel build $(ENTRYPOINT)
 
 lint: ## run static analysis
@@ -35,13 +35,16 @@ container: build ## create container
 
 # Plumbing
 # ###############
-.PHONY: setup push-container-image
+.PHONY: setup push-container-image clean
 
 push-container-image: container
 	docker tag queens-landing allgreed/queens-landing:preview$(VERSION)
 	docker push allgreed/queens-landing:preview$(VERSION)
 
 setup:
+
+clean:
+	rm -r dist
 
 
 # Utilities
