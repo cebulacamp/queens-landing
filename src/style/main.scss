@@ -6,7 +6,6 @@ $color4: rgba(61, 140, 208, 1);
 $color5: rgba(173, 35, 101, 1);
 
 .hero {
-    height: 50vh;
     //height: 115vh;
     color: $color2;
     background-color: $color1;
@@ -37,6 +36,10 @@ main {
 
 section.dupa {
     border: none !important;
+}
+
+section.dupa img {
+    width: 100%
 }
 
 section {
