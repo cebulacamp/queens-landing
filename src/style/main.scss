@@ -6,7 +6,6 @@ $color4: rgba(61, 140, 208, 1);
 $color5: rgba(173, 35, 101, 1);
 
 .hero {
-    height: 50vh;
     //height: 115vh;
     color: $color2;
     background-color: $color1;
@@ -35,7 +34,7 @@ main {
 
 // TODO: Maybe some fun with how text is laid
 
-section.dupa {
+section.starter {
     border: none !important;
 }
 
@@ -88,12 +87,29 @@ section:nth-child(even) {
         background-color: $color5;
     }
 
+
+    a {
+        color: $color5;
+
+        &:hover {
+            color: $color4;
+        }
+    }
+
     border: 8px solid $color5;
 }
 
 section:nth-child(odd) {
     h2 {
         background-color: $color4;
+    }
+
+    a {
+        color: $color4;
+
+        &:hover {
+            color: $color5;
+        }
     }
 
     border: 8px solid $color4;
