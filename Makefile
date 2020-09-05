@@ -2,23 +2,13 @@
 
 ENTRYPOINT := src/index.pug
 
+
 # Porcelain
 # ###############
-.PHONY: env-up env-down env-recreate ci build lint test container
+.PHONY: serve build lint test container
 
-serve: ## run bleble
+serve: setup ## run bleble
 	npx parcel $(ENTRYPOINT)
-
-ci: setup lint test build push-container-image ## run all tests and build all artifacts
-	@echo "Not implemented"; false
-
-env-up: ## set up dev environment
-	@echo "Not implemented"; false
-
-env-down: ## tear down dev environment
-	@echo "Not implemented"; false
-
-env-recreate: env-down env-up ## deconstruct current env and create another one
 
 build: setup clean ## create artifact
 	npx parcel build $(ENTRYPOINT)
@@ -41,7 +31,10 @@ push-container-image: container
 	docker tag queens-landing allgreed/queens-landing:preview$(VERSION)
 	docker push allgreed/queens-landing:preview$(VERSION)
 
-setup:
+setup: node_modules
+
+node_modules: package.json yarn.lock
+	yarn install --frozen-lockfile
 
 clean:
 	rm -r dist
@@ -49,6 +42,10 @@ clean:
 
 # Utilities
 # ###############
-.PHONY: help
+.PHONY: help todo clean init
+init: ## one time setup
+	direnv allow .
+
+
 help: ## print this message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
