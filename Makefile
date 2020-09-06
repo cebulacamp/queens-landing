@@ -8,10 +8,10 @@ ENTRYPOINT := src/index.pug
 .PHONY: serve build lint test container
 
 serve: setup ## run bleble
-	npx parcel $(ENTRYPOINT)
+	yarn parcel $(ENTRYPOINT)
 
 build: setup clean ## create artifact
-	npx parcel build $(ENTRYPOINT)
+	yarn parcel build $(ENTRYPOINT)
 
 lint: ## run static analysis
 	@echo "Not implemented"; false
