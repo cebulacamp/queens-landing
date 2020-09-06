@@ -37,7 +37,7 @@ node_modules: package.json yarn.lock
 	yarn install --frozen-lockfile
 
 clean:
-	rm -r dist
+	rm -rf dist
 
 
 # Utilities
