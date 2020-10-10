@@ -8,7 +8,7 @@ job "cebula_landing" {
       driver = "docker"
 
       config {
-        image = "allgreed/queens-landing:preview9"
+        image = "allgreed/queens-landing:preview10"
         port_map = {
             http = 80
         }
